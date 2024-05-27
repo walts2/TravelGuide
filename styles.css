@@ -1,0 +1,74 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif; /* Added a font-family for consistency */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.bg-img {
+    /* image used */
+    background-image: url("loginpage.png");
+
+     /* Ensure the background image covers the entire viewport */
+     height: 100vh;
+     width: 100vw;
+ 
+
+
+    /* CENTER AND SCALE THE IMAGE */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+/* Add styles to the form container */
+.container {
+    position: absolute;
+    right: 7%;
+    top: 50%; /* Adjust this */
+    transform: translateY(-50%); /* Center the container vertically */
+    margin: 20px;
+    max-width: 300px;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow for better visibility */
+    border-radius: 8px; /* Added border-radius for rounded corners */
+    text-align: center;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    border-radius: 4px; /* Added border-radius for input fields */
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Style for submit button */
+.btn {
+    background-color: #04AA6d;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    border-radius: 4px; /* Added border-radius for the button */
+}
+
+.btn:hover {
+    opacity: 1;
+}
