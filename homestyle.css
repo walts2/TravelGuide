@@ -1,0 +1,193 @@
+body {
+    background-image: url('11.png'); /* Ensure the path is correct */
+    background-size: cover; /* Cover the entire background */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.topnav {
+    margin-top: 50px; /* Adjust the margin to bring the navigation down */
+    background-color: none;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+}
+
+.topnav a { /* Style the links inside the navigation bar */
+    color: #ddd; /* Set link color */
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    position: relative; /* Required for the underline effect */
+}
+
+.topnav a::after { /* Create the underline element */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    left: 0;
+    bottom: 0;
+    background: white; /* Underline color */
+    transition: width 0.3s;
+}
+
+.topnav a:hover::after { /* Animate the underline on hover */
+    width: 100%;
+}
+
+.topnav a:hover { /* Change the color of links on hover */
+    background-color: none;
+    color: #ddd; /* Use black color on hover */
+}
+
+.dropdown { /*mismong text pag hover sa dropdown*/
+    margin-right: 50px;
+}
+
+.dropbtn:hover { /*hover ng dropdown*/
+    font-weight: bold; /* Make the text bold on hover */
+}
+
+.dropdown .dropbtn { /*search section*/
+    font-size: 17px;
+    border: none;
+    outline: none;
+    color: white; /* Text color for the drop button */
+    padding: 14px 16px;
+    background-color: transparent;
+    font-family: inherit;
+    margin: 0;
+    cursor: pointer;
+}
+
+.dropdown-content {/*links*/
+    display: none;
+    position: absolute;
+    background-color: rgba(39, 38, 38, 0.664); /* Black color with 50% opacity */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0; /* Align the dropdown to the right */
+    color: white;
+    margin-right: 50px;
+}
+
+.dropdown-content a {/*link deco*/
+    float: none;
+    color: white; /* Text color for dropdown links */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {/*dropdown hover*/
+    background-color: #424141;
+}
+
+.dropdown:hover .dropdown-content {/*dropdown contents*/
+    display: block;
+}
+
+.dropdown:hover .dropbtn {/*design ng dropdown*/
+    background-color: none;
+}
+
+.dropdown-content input {/*content*/
+    padding: 8px;
+    margin: 5px;
+    border: none;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    padding: 10px 10%;
+}
+
+#card-area {
+    padding: 50px 0;
+}
+
+.box-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.box {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+}
+
+.box img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.overlay {
+    height: 0;
+    width: 100%;
+    background: linear-gradient(transparent, #1c1c1c 58%);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    font-size: 12px;
+    transition: height 0.5s;
+    color: #fff;
+}
+
+.overlay h3 {
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 20%;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #fff;
+}
+
+.overlay a {
+    margin-top: 5px;
+    color: #262626;
+    text-decoration: none;
+    font-size: 14px;
+    background: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+}
+
+.boxLhover img{
+    transform: scale(1.1);
+}
+
+.box:hover .overlay{
+    height: 100%;
+}
