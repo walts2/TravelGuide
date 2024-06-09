@@ -1,193 +1,168 @@
-body {
-    background-image: url('11.png'); /* Ensure the path is correct */
-    background-size: cover; /* Cover the entire background */
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
+/* General reset and box-sizing */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-}
-.topnav {
-    margin-top: 50px; /* Adjust the margin to bring the navigation down */
-    background-color: none;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-}
-
-.topnav a { /* Style the links inside the navigation bar */
-    color: #ddd; /* Set link color */
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    position: relative; /* Required for the underline effect */
-}
-
-.topnav a::after { /* Create the underline element */
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    display: block;
-    left: 0;
-    bottom: 0;
-    background: white; /* Underline color */
-    transition: width 0.3s;
-}
-
-.topnav a:hover::after { /* Animate the underline on hover */
-    width: 100%;
-}
-
-.topnav a:hover { /* Change the color of links on hover */
-    background-color: none;
-    color: #ddd; /* Use black color on hover */
-}
-
-.dropdown { /*mismong text pag hover sa dropdown*/
-    margin-right: 50px;
-}
-
-.dropbtn:hover { /*hover ng dropdown*/
-    font-weight: bold; /* Make the text bold on hover */
-}
-
-.dropdown .dropbtn { /*search section*/
-    font-size: 17px;
-    border: none;
-    outline: none;
-    color: white; /* Text color for the drop button */
-    padding: 14px 16px;
-    background-color: transparent;
-    font-family: inherit;
-    margin: 0;
-    cursor: pointer;
-}
-
-.dropdown-content {/*links*/
-    display: none;
-    position: absolute;
-    background-color: rgba(39, 38, 38, 0.664); /* Black color with 50% opacity */
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    right: 0; /* Align the dropdown to the right */
-    color: white;
-    margin-right: 50px;
-}
-
-.dropdown-content a {/*link deco*/
-    float: none;
-    color: white; /* Text color for dropdown links */
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {/*dropdown hover*/
-    background-color: #424141;
-}
-
-.dropdown:hover .dropdown-content {/*dropdown contents*/
-    display: block;
-}
-
-.dropdown:hover .dropbtn {/*design ng dropdown*/
-    background-color: none;
-}
-
-.dropdown-content input {/*content*/
-    padding: 8px;
-    margin: 5px;
-    border: none;
-    width: 90%;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.wrapper {
-    padding: 10px 10%;
+/* Body styles */
+body {
+    background-image: url('dupe.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    font-family: arial, sans-serif;
 }
 
-#card-area {
-    padding: 50px 0;
-}
-
-.box-area {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 40px;
-    margin-top: 50px;
-}
-
-.box {
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-}
-
-.box img {
+/* Header styles */
+header {
+    position: fixed;
     width: 100%;
-    border-radius: 10px;
+    top: 0; 
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.0);
+}
+
+/* Add this to make header sticky */
+header.sticky {
+    position: sticky;   
+    background-color: #333; /* Change background color when sticky */
+}
+
+
+/* Logo styles */
+.logo img {
+    max-width: 120px;
+    height: auto;
+}
+
+/* Navigation menu styles */
+.navmenu {
+    display: flex;
+    list-style-type: none;
+}
+
+.navmenu li {
+    margin-right: 20px;
+}
+
+.navmenu li a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.navmenu li a:hover {
+    color: #FCBA04 ;
+}
+
+/* Navigation icon styles */
+.nav-icon a {
+    margin-left: 10px;
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-icon a:hover {
+    color: #FCBA04;
+}
+
+/* Search bar styles */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #555;
+}
+
+.main_container { /* Main container as grid */
+    margin: 6% auto;
+    position: relative;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px;
+}
+
+.grid-item { /* Grid item styling */
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+}
+
+.image { /* Image styling */
     display: block;
-    transition: transform 0.5s;
+    width: 80%;
+    height: auto;
 }
 
 .overlay {
-    height: 0;
-    width: 100%;
-    background: linear-gradient(transparent, #1c1c1c 58%);
-    border-radius: 10px;
     position: absolute;
-    left: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0, 0.75);
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 30px;
-    text-align: center;
-    font-size: 12px;
-    transition: height 0.5s;
-    color: #fff;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
 }
 
-.overlay h3 {
-    font-weight: 500;
-    margin-bottom: 5px;
-    margin-top: 20%;
-    font-family: Arial, sans-serif;
-    font-size: 30px;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #fff;
-}
-
-.overlay a {
-    margin-top: 5px;
-    color: #262626;
-    text-decoration: none;
-    font-size: 14px;
-    background: #fff;
-    border-radius: 50px;
-    text-align: center;
-    padding: 5px 15px;
-}
-
-.boxLhover img{
-    transform: scale(1.1);
-}
-
-.box:hover .overlay{
+.grid-item:hover .overlay {
     height: 100%;
+}
+
+h1 {
+    width: 100%;
+    margin-top: 30%;
+    color: white;
+    font-size: 4vw;
+    position: absolute;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 1.2vw;
+    margin: 60% 0 0 18%;
+    width: 70%;
+    letter-spacing: 5px;
+    line-height: 1.5em;
 }
